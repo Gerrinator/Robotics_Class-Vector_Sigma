@@ -50,7 +50,8 @@ public class Carmovement : MonoBehaviour
 
             else if (userinput.text.ToUpper() == "WEST")
             {
-                rb.AddTorque(-transform.up * 10);
+                transform.Rotate(0, -5, 0);
+                //rb.AddTorque(-transform.up * 10);
             }
             else if (userinput.text.ToUpper() == "STOP")
             {
