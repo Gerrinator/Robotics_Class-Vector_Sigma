@@ -13,7 +13,8 @@ public class Carmovement : MonoBehaviour
     public bool pick = false;
     public GameObject ball1;
     public GameObject mainBall;
-    
+    Vector3 m_EulerAngleVelocity;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -44,13 +45,16 @@ public class Carmovement : MonoBehaviour
 
             else if (userinput.text.ToUpper() == "EAST")
             {
-                transform.Rotate(0, 5, 0);
+     
+                rb.angularVelocity = new Vector3(0, Mathf.PI, 0);
+                //rb.MoveRotation(rb.rotation * deltaRotation);
+                //transform.Rotate(0, 5, 0);
                 //rb.AddTorque(transform.up * 10);
             }
 
             else if (userinput.text.ToUpper() == "WEST")
             {
-                transform.Rotate(0, -5, 0);
+                rb.angularVelocity = new Vector3(0, -Mathf.PI, 0);
                 //rb.AddTorque(-transform.up * 10);
             }
             else if (userinput.text.ToUpper() == "STOP")
